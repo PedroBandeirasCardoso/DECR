@@ -1,0 +1,3 @@
+Name;ExecutTime;#Participants;#MutNodes;#Nodes;#Splits;Init#Comms;Optimal#Comms;#OptimalSols;InitRisk;InitCost;OptimalRisk;OptimalCost;#Configs;RiskDist;CostDist;MonetaryTradeoff
+testeV6.5_-10%comms_rely.bpmn;3724.8;2;10;17;3;20;8;2;16870.720270600643;88.647986;9188.455832763351;67.44422089999999;1;0.0;0.0;-0.4000242777339599;
+testeV6.5_-10%comms_rely.bpmn;3724.8;2;10;17;3;20;6;2;16870.720270600643;88.647986;5143.649732132804;92.9047409;1;0.1572019471679187;0.12181897546525516;-0.5572262249018786;
