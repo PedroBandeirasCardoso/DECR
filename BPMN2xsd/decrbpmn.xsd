@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns="http://www.fc.ul.pt/decrbpmn"
+            xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+            targetNamespace="http://www.fc.ul.pt/decrbpmn"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+
+	<xs:import namespace="http://www.omg.org/spec/BPMN/20100524/MODEL"
+              schemaLocation="BPMN20.xsd"/>
+	<xs:import namespace="http://www.omg.org/spec/DD/20100524/DC"
+           schemaLocation="DC.xsd"/>
+	<xs:import namespace="http://www.omg.org/spec/DD/20100524/DI"
+           schemaLocation="DI.xsd"/>
+
+  <xsd:group name="DECRBPMN">
+    <xsd:sequence>
+      <xsd:element name="RiskInformation" type="tRiskInformation" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="ReliabilityInformation" type="tReliabilityInformation" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="BusinessValueInformation" type="tBusinessValueInformation" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="CostInformation" type="tCostInformation" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="Probability" type="tProbability" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="Mutable" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="OutgoingCommunication" type="tCommunicationLink" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="IncomingCommunication" type="tCommunicationLink" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:group>
+
+  <xsd:complexType name="tRiskInformation">
+    <xsd:attribute name="calculatedRisk" type="xsd:decimal" use="optional"/>
+    <xsd:attribute name="riskAcceptanceCriterion" type="xsd:decimal" use="optional"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="tReliabilityInformation">
+    <xsd:attribute name="reliabilityValue" type="xsd:decimal" use="required"/>
+    <xsd:attribute name="participantRef" type="xsd:IDREF" use="required"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="tBusinessValueInformation">
+    <xsd:attribute name="businessValue" type="xsd:decimal" use="optional"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="tCostInformation">
+    <xsd:attribute name="costValue" type="xsd:decimal" use="required"/>
+    <xsd:attribute name="participantRef" type="xsd:IDREF" use="required"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="tProbability">
+    <xsd:attribute name="probabilityValue" type="xsd:decimal" use="optional"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="tCommunicationLink">
+    <xsd:attribute name="participantRef" type="xsd:IDREF" use="required"/>
+    <xsd:attribute name="reliabilityValue" type="xsd:decimal" use="required"/>
+    <xsd:attribute name="costValue" type="xsd:decimal" use="required"/>
+  </xsd:complexType>
+  
+</xsd:schema>

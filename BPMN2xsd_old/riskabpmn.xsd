@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+			xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" 
+			xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" 
+			targetNamespace="http://www.fc.ul.pt/riskabpmn">
+	<xsd:group name="RISKABPMN">
+		<xsd:sequence>
+			<xsd:element name="RiskInformation" type="n1:tRiskInformation" minOccurs="0" maxOccurs="1" xmlns:n1="http://www.fc.ul.pt/riskabpmn"/>
+			<xsd:element name="ReliabilityInformation" type="n1:tReliabilityInformation" minOccurs="0" maxOccurs="1" xmlns:n1="http://www.fc.ul.pt/riskabpmn"/>
+			<xsd:element name="BusinessValueInformation" type="n1:tBusinessValueInformation" minOccurs="0" maxOccurs="1" xmlns:n1="http://www.fc.ul.pt/riskabpmn"/>
+			<xsd:element name="Probability" type="n1:tProbability" minOccurs="0" maxOccurs="1" xmlns:n1="http://www.fc.ul.pt/riskabpmn"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:complexType name="tRiskInformation" abstract="false">
+		<xsd:attribute name="calculatedRisk" type="xsd:decimal"/>
+		<xsd:attribute name="riskAcceptanceCriterion" type="xsd:decimal"/>
+	</xsd:complexType>
+	<xsd:complexType name="tReliabilityInformation" abstract="false">
+		<xsd:attribute name="reliabilityValue" type="xsd:decimal"/>
+	</xsd:complexType>
+	<xsd:complexType name="tBusinessValueInformation" abstract="false">
+		<xsd:attribute name="businessValue" type="xsd:decimal"/>
+	</xsd:complexType>
+	<xsd:complexType name="tProbability" abstract="false">
+		<xsd:attribute name="probabilityValue" type="xsd:decimal"/>
+	</xsd:complexType>
+</xsd:schema>

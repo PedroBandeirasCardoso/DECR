@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+			xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" 
+			xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" 
+			targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+	<xsd:group name="relyBPMN">
+		<xsd:sequence>
+			<xsd:element name="ReliabilityInformation" type="tReliabilityInformation" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="Probability" type="tProbability" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:complexType name="tReliabilityInformation" abstract="false">
+		<xsd:attribute name="requiredReliability" type="xsd:decimal"/>
+		<xsd:attribute name="calculatedReliability" type="xsd:decimal"/>
+		<xsd:attribute name="test" type="xsd:decimal"/>
+	</xsd:complexType>
+	<xsd:complexType name="tProbability" abstract="false">
+		<xsd:attribute name="value" type="xsd:decimal"/>
+	</xsd:complexType>
+</xsd:schema>

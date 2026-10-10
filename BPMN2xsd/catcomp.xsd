@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2020 rel. 2 sp1 (x64) (http://www.altova.com) by Dulce Domingos (Universidade de Lisboa) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" targetNamespace="http://www.fc.ul.pt/catcomp">
+	<xsd:group name="CATCOMP">
+		<xsd:sequence>
+			<xsd:element name="CategoryValueRef" type="n1:tCategoryValueRef" minOccurs="0" maxOccurs="1" xmlns:n1="http://www.fc.ul.pt/catcomp"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:complexType name="tCategoryValueRef" abstract="false">
+		<xsd:attribute name="categoryValueRef" type="xsd:string"/>
+	</xsd:complexType>
+</xsd:schema>
